@@ -32,11 +32,12 @@ PRO_URL="https://raw.githubusercontent.com/BDhackers009/tsetup/main/files"
 
 # Backuping files 
 bkup_files() {
-[ -f ${HOME_TERMUX}/.bashrc ] && mv ${HOME_TERMUX}/.bashrc ${HOME_TERMUX}/.bashrc.bak
-[ -f ${ETC_TERMUX}/inputrc ] && mv ${ETC_TERMUX}/inputrc ${ETC_TERMUX}/inputrc.bak
-[ -f ${HOME_TERMUX}/.termux/colors.properties ] && mv ${HOME_TERMUX}/.termux/colors.properties ${HOME_TERMUX}/.termux/colors.properties.bak
-[ -f ${HOME_TERMUX}/.termux/font.ttf ] && mv ${HOME_TERMUX}/.termux/font.ttf ${HOME_TERMUX}/.termux/font.ttf.bak
-[ -f ${HOME_TERMUX}/.termux/termux.properties ] && mv ${HOME_TERMUX}/.termux/termux.properties ${HOME_TERMUX}/.termux/termux.properties.bak
+  local backup_date=$(date +%Y-%m-%d_%H:%M:%S)
+  [ -f "${HOME_TERMUX}/.bashrc" ] && mv "${HOME_TERMUX}/.bashrc" "${HOME_TERMUX}/.bashrc.bak_${backup_date}"
+  [ -f "${ETC_TERMUX}/inputrc" ] && mv "${ETC_TERMUX}/inputrc" "${ETC_TERMUX}/inputrc.bak_${backup_date}"
+  [ -f "${HOME_TERMUX}/.termux/colors.properties" ] && mv "${HOME_TERMUX}/.termux/colors.properties" "${HOME_TERMUX}/.termux/colors.properties.bak_${backup_date}"
+  [ -f "${HOME_TERMUX}/.termux/font.ttf" ] && mv "${HOME_TERMUX}/.termux/font.ttf" "${HOME_TERMUX}/.termux/font.ttf.bak_${backup_date}"
+  [ -f "${HOME_TERMUX}/.termux/termux.properties" ] && mv "${HOME_TERMUX}/.termux/termux.properties" "${HOME_TERMUX}/.termux/termux.properties.bak_${backup_date}"
 }
 
 pkg_install() {
@@ -45,7 +46,7 @@ yes | pkg up
 
 # Install required packages.
 
-pkgs=(git fd ripgrep fzf exa bat xz-utils ncurses-utils)
+pkgs=(git fd ripgrep perl fzf exa bat xz-utils ncurses-utils)
 
 for pro in "${pkgs[@]}"; do
     type -p "$pro" &>/dev/null || {

@@ -89,7 +89,8 @@ all_done() {
   clear
   banner
   echo 
-  echo "[+] Termux has been setup successfully. Enjoy."
+  echo "[+] Termux has been setup successfully. Now Restart Termux and Enjoy."
+  termux-reload-settings
 }
 
 

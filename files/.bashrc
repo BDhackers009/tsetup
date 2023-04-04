@@ -36,7 +36,7 @@ function set_bash_prompt () {
 
 }
 bind TAB:menu-complete
-bind -x '"\C-\o: fcd'
+bind -x '"\C-\o": fcd'
 
 export PROMPT_COMMAND=set_bash_prompt
 #Source fzf files.

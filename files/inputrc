@@ -4,7 +4,7 @@ set output-meta on
 set show-all-if-ambiguous on
 set colored-completion-prefix on
 set colored-stats on
-set completion-ignore-case on
+set completion-ignore-case off
 # some defaults / modifications for the emacs mode
 $if mode=emacs
 

@@ -90,7 +90,7 @@ fcd() {
 # Aliases
 # replace ls,grep,find,cat to exa,ripgrep,fd,bat
 
-alias ls="exa --icons -group-directories-first"
+alias ls="exa --icons --group-directories-first"
 alias l="ls"
 alias la="ls -a"
 alias ll="ls -lah"

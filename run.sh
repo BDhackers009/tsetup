@@ -46,7 +46,7 @@ yes | pkg up
 
 # Install required packages.
 
-pkgs=(git fd ripgrep perl fzf exa bat xz-utils ncurses-utils)
+pkgs=(git fd ripgrep perl fzf eza bat xz-utils ncurses-utils)
 
 for pro in "${pkgs[@]}"; do
     type -p "$pro" &>/dev/null || {
